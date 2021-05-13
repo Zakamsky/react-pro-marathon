@@ -1,3 +1,36 @@
+// 1. concat
+
+// todo: закоментил т.к. линтер не пропускает коммит:
+
+// function concat(first: string, second: string ): string {
+//     return first + second;
+// }
+//
+// concat('Hello ', 'World') // -> Hello World;
+//
+// type strAndNum = string | number;
+//
+// type myObj = {
+//     howIDoIt: string,
+//     simeArray: Array<strAndNum>,
+//     withData?: myObj[],
+// }
+//
+// const myHometask: myObj = {
+//     howIDoIt: "I Do It Wel",
+//     simeArray: ["string one", "string two", 42],
+//     withData: [{ howIDoIt: "I Do It Wel", simeArray: ["string one", 23] }],
+// }
+//
+//
+// interface MyArray<T> {
+//     [N: number]: T;
+//
+//     reduce<U>(fn: (previousValue: U , currentValue: U) => U ): U;
+// }
+
+// todo: old texts from video
+
 //
 // let tsStringExample: string = '2';
 //
