@@ -27,6 +27,7 @@
 //     [N: number]: T;
 //
 //     reduce<U>(fn: (previousValue: U , currentValue: U) => U ): U;
+//  // reduce<U>(fn: (acc: U, el: T) => U, init: U): U; // Вариант Зара.
 // }
 
 // todo: old texts from video

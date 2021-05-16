@@ -3,4 +3,4 @@ node_modules
 dist
 latarea.md
 
-src/**.d.ts
+src/**/**.d.ts
