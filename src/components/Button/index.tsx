@@ -5,16 +5,16 @@ import s from './button.module.scss';
 
 interface buttonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  yellow?: boolean;
-  small?: boolean;
+  color?: string;
+  size?: string;
   wide?: boolean;
 }
 
-const Button: React.FC<buttonProps> = ({ children, onClick, yellow, small, wide }) => {
+const Button: React.FC<buttonProps> = ({ children, onClick, color = 'green', size, wide }) => {
   return (
     <button
       type="button"
-      className={cn(s.button, { [s.yellow]: yellow, [s.small]: small, [s.wide]: wide })}
+      className={cn(s.button, { [s.yellow]: color === 'yellow', [s.small]: size === 'small', [s.wide]: wide })}
       onClick={onClick}>
       {children}
     </button>

@@ -1,0 +1,202 @@
+.root {
+  width: 351px;
+  height: 136px;
+  box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+  background: #f6f7f9;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  //margin-bottom: 45px;
+  cursor: pointer;
+  transition: all ease-in-out 0.15s;
+  &:hover {
+    transform: scale(1.03);
+    transition: all ease-in-out 0s;
+  }
+}
+
+.infoWrap {
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  top: 6px;
+  left: 25px;
+}
+
+.titleName {
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+.statWrap {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.statItem {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #4b4b4b;
+  margin-right: 12px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.statValue {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #212121;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #212121;
+  margin: 0 auto 8px;
+}
+
+.pictureWrap {
+  width: 232px;
+  height: 100%;
+  background: linear-gradient(270deg, #b33327 0.15%, #d93e30 100%);
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.Stile,
+  &.dark,
+  &.rock {
+    $dark-gray: darken(#a1a1a1, 20%);
+    background-image: linear-gradient(270deg, $dark-gray 0.15%, #a1a1a1 100%);
+  }
+
+  &.grass,
+  &.bug {
+    $dark-green: darken(#70a83b, 20%);
+    background-image: linear-gradient(270deg, $dark-green 0.15%, #70a83b 100%);
+  }
+
+  &.ice,
+  &.water {
+    $dark-ice: darken(#a2cff0, 20%);
+    background-image: linear-gradient(270deg, $dark-ice 0.15%, #a2cff0 100%);
+  }
+
+  &.fire,
+  &.fighting,
+  &.dragon {
+    $dark-red: darken(#f76545, 20%);
+    background-image: linear-gradient(270deg, $dark-red 0.15%, #f76545 100%);
+  }
+
+  &.normal,
+  &.gosth {
+    $dark-blue: darken(#76aadb, 20%);
+    background-image: linear-gradient(270deg, $dark-blue 0.15%, #76aadb 100%);
+  }
+
+  &.poison,
+  &.psychic,
+  &.fairy,
+  &.ghost {
+    $dark-plum: darken(#a974bc, 20%);
+    background-image: linear-gradient(270deg, $dark-plum 0.15%, #a974bc 100%);
+  }
+
+  &.ground {
+    $dark-brown: darken(#9b897b, 20%);
+    background-image: linear-gradient(270deg, $dark-brown 0.15%, #9b897b 100%);
+  }
+
+  &.electric {
+    $dark-orange: darken(#f7c545, 20%);
+    background-image: linear-gradient(270deg, $dark-orange 0.15%, #f7c545 100%);
+  }
+
+  img {
+    width: 80%;
+  }
+}
+
+.label {
+  background: #f28f16;
+  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+  border-radius: 11px;
+  height: 15px;
+  min-width: 60px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #212121;
+  padding: 0 12px 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+
+  &.Stile,
+  &.dark,
+  &.rock {
+    background-color: #a1a1a1;
+  }
+
+  &.grass,
+  &.bug {
+    background-color: #70a83b;
+  }
+
+  &.ice,
+  &.water {
+    background-color: #a2cff0;
+  }
+
+  &.fire,
+  &.fighting,
+  &.dragon {
+    background-color: #f76545;
+  }
+
+  &.normal,
+  &.gosth {
+    background-color: #76aadb;
+  }
+
+  &.poison,
+  &.psychic,
+  &.fairy,
+  &.ghost {
+    background-color: #a974bc;
+  }
+
+  &.ground {
+    background-color: #9b897b;
+  }
+
+  &.electric {
+    background-color: #f7c545;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.labelWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
