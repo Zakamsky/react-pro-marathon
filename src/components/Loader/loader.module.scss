@@ -1,0 +1,20 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 200px;
+  height: 200px;
+  svg {
+    animation: 3s linear 2s infinite rotate;
+    //transform: rotate(1200deg);
+    //transition: 5s ease-in-out all;
+  }
+}
