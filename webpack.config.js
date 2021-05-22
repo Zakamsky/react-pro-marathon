@@ -78,6 +78,7 @@ module.exports = {
     port: 3030,
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
   devtool: 'source-map',
 };

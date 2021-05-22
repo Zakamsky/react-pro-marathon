@@ -8,7 +8,7 @@ import PokeBallPng from './assets/pokeball2.png';
 import CloudBigPng from './assets/cloud2.png';
 import PikachuPng from './assets/pikachu.png';
 
-const Parallax = () => {
+const Parallax: React.FC = () => {
   const [screenX, setScreenX] = useState(0);
   const [screenY, setScreenY] = useState(0);
 
@@ -19,7 +19,7 @@ const Parallax = () => {
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [screenX, screenY]);
+  }, []);
 
   return (
     <div className={s.root}>
