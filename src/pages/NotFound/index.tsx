@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 import teamRoket from './assets/team_rocket.png';
 import s from './notfound.module.scss';
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <div className={s.root}>
       <img src={teamRoket} alt="Team Rocket" />

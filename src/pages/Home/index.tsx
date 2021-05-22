@@ -11,7 +11,7 @@ import Parallax from '../../components/Parallax';
 
 import s from './home.module.scss';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <div className={s.root}>
       <Header />

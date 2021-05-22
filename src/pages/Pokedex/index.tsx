@@ -6,6 +6,7 @@ import PokemonCard from '../../components/PokemonCard';
 
 import s from './index.module.scss';
 
+// todo: interface for pokemons???
 const pokemons = [
   {
     name_clean: 'bulbasaur',
@@ -219,7 +220,7 @@ const pokemons = [
   },
 ];
 
-const Pokedex = () => {
+const Pokedex: React.FC = () => {
   return (
     <div>
       <Header />
