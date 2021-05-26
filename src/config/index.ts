@@ -28,6 +28,12 @@ export const config: iConfig = {
           pathname: 'api/v-1/pokemons',
         },
       },
+      getPokemonSolo: {
+        method: 'GET',
+        uri: {
+          pathname: 'api/v-1/pokemon/',
+        },
+      },
     },
   },
 };

@@ -1,6 +1,6 @@
 import config, { ConfigEndpointKeyType } from '../config';
 
-function getUrlWithParamsConfig(endpointConfig: ConfigEndpointKeyType, query: object) {
+function getUrlWithParamsConfig(endpointConfig: ConfigEndpointKeyType, query: object, id: string | number = '') {
   const url = {
     ...config.client.server,
     ...config.client.endpoint[endpointConfig].uri,
@@ -8,6 +8,10 @@ function getUrlWithParamsConfig(endpointConfig: ConfigEndpointKeyType, query: ob
       ...query,
     },
   };
+
+  if (id !== '') {
+    url.pathname += id;
+  }
 
   return url;
 }

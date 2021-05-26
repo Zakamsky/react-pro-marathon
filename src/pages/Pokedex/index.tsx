@@ -9,17 +9,26 @@ import Loader from '../../components/Loader';
 import useData from '../../hook/getData';
 import { IPokemon, PokemonsRequest } from '../../interface/pokemons';
 
+import useDebounce from '../../hook/useDebounce';
+
 interface IQuery {
+  limit?: number;
   name?: string;
 }
 
 const Pokedex: React.FC = () => {
   const [searchvalue, setSearchvalue] = useState('');
-  const [query, setQuery] = useState<IQuery>({});
+  const [query, setQuery] = useState<IQuery>({
+    limit: 12,
+  });
+  const deboncedValue = useDebounce(searchvalue, 600);
+
   // const query = useMemo(() => ({
   //   name: searchvalue
   // }), [searchvalue])
-  const { data, isLoaded, isError } = useData<IPokemon>('getPokemons', query, [searchvalue]);
+
+  const { data, isLoaded, isError } = useData<IPokemon>('getPokemons', query, [deboncedValue]);
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchvalue(e.target.value);
     setQuery((prevState: IQuery) => ({
@@ -55,16 +64,14 @@ const Pokedex: React.FC = () => {
           <div className={s.pokemonsDeck}>
             {data &&
               data.pokemons.map(({ id, name, stats, types, img }: PokemonsRequest) => (
-                <>
-                  <PokemonCard
-                    key={id}
-                    name={name}
-                    attack={stats.attack}
-                    defense={stats.defense}
-                    types={types}
-                    img={img}
-                  />
-                </>
+                <PokemonCard
+                  key={id}
+                  name={name}
+                  attack={stats.attack}
+                  defense={stats.defense}
+                  types={types}
+                  img={img}
+                />
               ))}
           </div>
         )}
