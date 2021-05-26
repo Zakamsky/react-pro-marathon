@@ -3,7 +3,6 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 import { LinkEnum } from '../../routes';
 
-import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import Button from '../../components/Button';
@@ -14,7 +13,6 @@ import s from './home.module.scss';
 const HomePage: React.FC = () => {
   return (
     <div className={s.root}>
-      <Header />
       <Layout className={s.layout}>
         <div>
           <Heading lvl={1}>

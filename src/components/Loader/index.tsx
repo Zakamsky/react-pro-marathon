@@ -3,7 +3,7 @@ import { ReactComponent as LoaderSvg } from './assets/pokeball.svg';
 
 import s from './loader.module.scss';
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
     <div className={s.loader}>
       <LoaderSvg />
@@ -11,4 +11,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default React.memo(Loader);
