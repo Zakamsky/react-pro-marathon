@@ -1,3 +1,25 @@
+const toCapitalizeFirstLetter = (string: string) => {
+  if (!string || typeof string !== 'string') {
+    return '';
+  }
+
+  const words = string.split(' ');
+
+  if (words.length > 1) {
+    return words
+      .map((word) => {
+        return word[0].toUpperCase() + word.substr(1);
+      })
+      .join(' ');
+  }
+
+  return string[0].toUpperCase() + string.substr(1);
+};
+
+export default toCapitalizeFirstLetter;
+
+// toCapitalizeFirstLetter("test text line")
+
 // 1. concat
 
 // todo: закоментил т.к. линтер не пропускает коммит:

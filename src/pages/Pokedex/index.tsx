@@ -62,10 +62,7 @@ const Pokedex: React.FC = () => {
         <div>
           <input type="text" value={searchvalue} onChange={handleSearchChange} />
         </div>
-        {
-          isLoaded && <Loader />
-          // todo: я вот нашел какой то страный способ условного отображения, наверняка есть что то получше, может подскажещь?
-        }
+        {isLoaded && <Loader />}
         {!isLoaded && (
           <div className={s.pokemonsDeck}>
             {data &&
