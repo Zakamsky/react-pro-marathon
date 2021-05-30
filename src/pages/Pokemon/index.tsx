@@ -13,7 +13,7 @@ export interface iPokemonProps {
 }
 
 const Pokemon: React.FC<iPokemonProps> = ({ id }) => {
-  const { data, isLoaded, isError } = useData<PokemonsRequest>('getPokemonSolo', {}, [], id);
+  const { data, isLoaded, isError } = useData<PokemonsRequest>('getPokemonSolo', { id }, []);
 
   if (isError) {
     return (

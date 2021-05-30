@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { navigate } from 'hookrouter';
+import useDebounce from '../../hook/useDebounce';
+import useData from '../../hook/getData';
+
 import Header from '../../components/Header';
 import Heading from '../../components/Heading';
 import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard';
-
-import s from './index.module.scss';
 import Loader from '../../components/Loader';
-import useData from '../../hook/getData';
+
 import { IPokemon, PokemonsRequest } from '../../interface/pokemons';
 
-import useDebounce from '../../hook/useDebounce';
+import s from './index.module.scss';
 
 interface IQuery {
   limit?: number;
@@ -37,6 +39,10 @@ const Pokedex: React.FC = () => {
     }));
   };
 
+  const handleClick = (pokId: number) => {
+    navigate(`/pokedex/${pokId}`);
+  };
+
   if (isError) {
     return (
       <>
@@ -56,21 +62,20 @@ const Pokedex: React.FC = () => {
         <div>
           <input type="text" value={searchvalue} onChange={handleSearchChange} />
         </div>
-        {
-          isLoaded && <Loader />
-          // todo: я вот нашел какой то страный способ условного отображения, наверняка есть что то получше, может подскажещь?
-        }
+        {isLoaded && <Loader />}
         {!isLoaded && (
           <div className={s.pokemonsDeck}>
             {data &&
               data.pokemons.map(({ id, name, stats, types, img }: PokemonsRequest) => (
                 <PokemonCard
                   key={id}
+                  pokId={id}
                   name={name}
                   attack={stats.attack}
                   defense={stats.defense}
                   types={types}
                   img={img}
+                  onClick={handleClick}
                 />
               ))}
           </div>

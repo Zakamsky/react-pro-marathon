@@ -6,7 +6,10 @@ interface headingProps {
 }
 
 const Heading: React.FC<headingProps> = ({ children, lvl, className }) => {
-  const Tag = `h${lvl}` as keyof JSX.IntrinsicElements;
+  let Tag = `h${lvl}` as keyof JSX.IntrinsicElements;
+  if (!lvl || lvl > 6) {
+    Tag = 'p';
+  }
 
   return <Tag className={className}>{children}</Tag>;
 };
